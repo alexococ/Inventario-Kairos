@@ -1,0 +1,84 @@
+#success_message{ display: none;}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+:root {
+    --btn-color: #4f6ffc;
+    --title-form: #f1d791;
+    --white-color: #fff;
+    --black-color: #000;
+    --box-shadow: 0 2rem 3rem var(--dark-color);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: grey;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: var(--white-color); /* Color de fondo */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: var(--box-shadow); /* Sombra */
+    max-width: 600px; /* Ancho máximo del formulario (modificado) */
+    width: 90%; /* Anchura del contenedor */
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+
+/* Estilos para los campos de texto */
+.form-control {
+    border: 1px solid var(--black-color); /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 15px; /* Margen inferior */
+    width: calc(100% - 22px); /* Ancho del campo (restar el padding) */
+}
+
+.btn {
+    background-color: var(--btn-color); /* Color de fondo */
+    color: var(--white-color); /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 9px 20px; /* Espaciado interno */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+}
+
+.btn:hover {
+    opacity: 0.8; /* Reducir opacidad al pasar el cursor sobre el botón */
+}
+
+/* Estilos para los botones */
+button {
+    background-color: var(--btn-color); /* Color de fondo */
+    color: var(--white-color); /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+}
+
+/* Estilos para el mensaje de éxito */
+#success_message {
+    display: none; /* Ocultar el mensaje por defecto */
+    color: green; /* Color del texto */
+    font-weight: bold; /* Negrita */
+    margin-top: 10px; /* Margen superior */
+}
+
+h1{
+    color: var(--title-form);
+}

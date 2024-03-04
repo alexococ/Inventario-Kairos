@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/Add.css">
+    <title>Añadir Producto</title>
+</head>
+<body>
+    
+    <form action="/public/Add" method="post" class="container">
+        <h1>Añadir Producto</h1>
+        <br>
+        <label for="tipologia">Tipología:</label>
+        <input type="text" id="tipologia" name="Tipologia"><br><br>
+        
+        <label for="subtipologia">Subtipología:</label>
+        <input type="text" id="subtipologia" name="Subtipologia"><br><br>
+        
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="Nombre"><br><br>
+        
+        <label for="descripcion">Descripción:</label>
+        <input type="text" id="descripcion" name="Descripcion"><br><br>
+        
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="Ubicacion"><br><br>
+        
+        <label for="precio">Precio:</label>
+        <input type="text" id="precio" name="Precio"><br><br>
+        
+        <label for="fecha_compra">Fecha de Compra:</label>
+        <input type="date" id="fecha_compra" name="FechaCompra"><br><br>
+        
+        <label for="seguro">Seguro:</label>
+        <select id="seguro" name="Seguro">
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+        </select><br><br>
+        
+        <label for="fecha_seguro">Fecha de Seguro:</label>
+        <input type="date" id="fecha_seguro" name="FechaSeguro"><br><br>
+        
+        <label for="baja">Baja:</label>
+        <select id="baja" name="Baja">
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+        </select><br><br>
+        
+        <label for="fecha_baja">Fecha de Baja:</label>
+        <input type="date" id="fecha_baja" name="FechaBaja"><br><br>
+        
+        <label for="responsable">Responsable:</label>
+        <input type="text" id="responsable" name="Responsable"><br><br>
+        
+        <label for="observaciones">Observaciones:</label>
+        <textarea id="observaciones" name="Observaciones" rows="4"></textarea><br><br>
+        
+        <button type="submit">Guardar Producto</button>
+        <a href="/Dashboard.html" id="redirectButton" class="btn">Volver Atrás</a>
+
+    </form>
+
+    <script src="./js/Add.js"></script>
+</body>
+</html>

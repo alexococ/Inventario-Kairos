@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ESTILOS CSS -->
+    <link rel="stylesheet" href="./css/Dashboard.css">
+
+    <!-- ICONO VENTANA -->
+    <link rel="icon" href="./ico/icono.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./ico/icono.ico" type="image/x-icon">
+
+    <title>Kairos</title>
+
+</head>
+
+<body>
+
+    <div class="sidebar-overlay"></div>
+
+    <aside id="sidebar" class="sidebar sidebar-default open" role="navigation">
+
+        <div class="sidebar-header header-cover">
+            <div class="sidebar-image">
+                <img src="./img/Logo.png">
+            </div>
+        </div>
+
+        <!-- Sidebar navigation -->
+        <ul class="nav sidebar-nav">
+            <li>
+                <a href="#">
+                    <i class="sidebar-icon md-inbox"></i>
+                    Todos los productos
+                </a>
+            </li>
+            <li>
+                <a href="./Form.html">
+                    <i class="sidebar-icon md-star"></i>
+                    Añadir producto
+                </a>
+            </li>
+            <li>
+                <a id="exportarBtn" class="btn">
+                    <i class="sidebar-icon md-star"></i>
+                    Exportar
+                </a>
+            </li>
+            <li class="divider"></li>
+            <li class="dropdown" id="dropdown">
+                <a class="ripple-effect dropdown-toggle" href="#" data-toggle="dropdown">
+                    Filtros
+                    <b class="caret"></b>
+                </a>
+
+                <ul class="dropdown-menu" id="filtroDropdown">
+                    <li>
+                        <label for="tipologia">Tipologia:</label>
+                        <select id="tipologia">
+                            <option value="">Seleccionar</option>
+                            <option value="Informatica">Informatica</option>
+                            <option value="Telefonia">Telefonia</option>
+                            <option value="Mobiliario">Mobiliario</option>
+                            <option value="Electrodomesticos">Electrodomésticos</option>
+                        </select>
+                    </li>
+                    <br>
+                    <li>
+                        <label for="subtipologia">Subtipologia:</label>
+                        <select id="subtipologia">
+                            <option value="">Seleccionar</option>
+                            <option value="Sobremesa">Sobremesa</option>
+                            <option value="Portatil">Portatil</option>
+                            <option value="Pantalla">Pantalla</option>
+                            <option value="Monitor">Monitor</option>
+                            <option value="Proyector">Proyector</option>
+                            <option value="Tablet">Tablet</option>
+                            <option value="Conectividad">Conectividad</option>
+                            <option value="Periferico">Periferico</option>
+                            <option value="Smartphone">Smartphone</option>
+                            <option value="Fijo">Fijo</option>
+                            <option value="Oficina">Oficina</option>
+                            <option value="Pisos">Pisos</option>
+                        </select>
+                    </li>
+                    <br>
+                    <li>
+                        <label for="ubicacion">Ubicación:</label>
+                        <select id="ubicacion">
+                            <option value="">Seleccionar</option>
+                            <option value="Globo 1">Globo 1</option>
+                            <option value="Globo 3">Globo 3</option>
+                            <option value="Globo 6">Globo 6</option>
+                            <option value="Globo 14">Globo 14</option>
+                            <option value="Pintor Marín Bagües 2-4-6">Pintor Marín Bagües 2-4-6</option>
+                            <option value="Molino de las Armas 49">Molino de las Armas 49</option>
+                            <option value="GGM 2">GGM 2</option>
+                            <option value="GGM 24">GGM 24</option>
+                            <option value="GGM 59">GGM 59</option>
+                            <option value="SA 31">SA 31</option>
+                            <option value="SO 16">SO 16</option>
+                            <option value="PDM 9">PDM 9</option>
+                            <option value="SJP 117">SJP 117</option>
+                            <option value="SJP 177">SJP 177</option>
+                            <option value="PS 53">PS 53</option>
+                            <option value="PMB 6">PMB 6</option>
+                            <option value="PLE 3">PLE 3</option>
+                            <option value="MDG 9">MDG 9</option>
+                            <option value="PMB 8">PMB 8</option>
+                            <option value="Río Huerva 3,1">Río Huerva 3,1</option>
+                            <option value="Río Huerva 3,2">Río Huerva 3,2</option>
+                            <option value="Río Huerva Local">Río Huerva Local</option>
+                            <option value="Comadre 10">Comadre 10</option>
+                            <option value="Av Sagunto 44">Av Sagunto 44</option>
+                            <option value="GGM Locales">GGM Locales</option>
+                            <option value="CLT Os Mesaches">CLT Os Mesaches</option>
+                            <option value="Almacén Río Huerva">Almacén Río Huerva</option>
+                            <option value="Almacén Globo 6">Almacén Globo 6</option>
+                            
+                        </select>
+                    </li>
+                    <br>
+                    <li>
+                        <label for="baja">Baja:</label>
+                        <select id="baja">
+                            <option value="">Seleccionar</option>
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
+                        </select>
+                    </li>
+                    <br>
+                    <label for="fechaBaja">Año de Baja:</label>
+                    <input type="number" id="fechaBaja" placeholder="Año">
+                    <br>
+                    <li>
+                        <label for="seguro">Seguro:</label>
+                        <select id="seguro">
+                            <option value="">Seleccionar</option>
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
+                        </select>
+                    </li>
+                    <br>
+                    <label for="fechaSeguro">Año de Seguro:</label>
+                    <input type="number" id="fechaSeguro" placeholder="Año">
+                    <br>
+                    <label for="fechaCompra">Año de Compra:</label>
+                    <input type="number" id="fechaCompra" placeholder="Año">
+                    <br>
+                    <li>
+                        <label for="precioMaximo">Precio Máximo:</label>
+                        <input type="text" id="precioMaximo" placeholder="Precio Máximo">
+                    </li>
+                    <br>
+                    <a href="#" class="botones">
+                    <button class="btn-flt" id="aplicarFiltros">Aplicar Filtros</button>
+                    <button class="btn-flt" id="limpiarFiltros">Limpiar Filtros</button>
+                </a>
+                    
+                    
+                </ul>
+                <!-- ... -->
+
+        <!-- Botón Logout -->
+        <a href="./Login.html">
+            <button class="Btn">
+
+                <div class="sign"><svg viewBox="0 0 512 512">
+                        <path
+                            d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
+                        </path>
+                    </svg></div>
+
+                <div class="text">Logout</div>
+            </button>
+        </a>
+
+    </aside>
+
+    <!-- INVENTARIO -->
+    <div class="main-content">
+        <h2>Inventario</h2>
+        <table id="product-table">
+            <thead>
+                <tr>
+                    <thead>
+                        <tr>
+                            <th data-type="text">Tipología<span class="arrow"></span></th>
+                            <th data-type="text">Subtipología<span class="arrow"></span></th>
+                            <th data-type="text">Nombre<span class="arrow"></span></th>
+                            <th data-type="text">Descripción<span class="arrow"></span></th>
+                            <th data-type="text">Ubicación<span class="arrow"></span></th>
+                            <th data-type="number">Precio<span class="arrow"></span></th>
+                            <th data-type="date">Fecha de Compra<span class="arrow"></span></th>
+                            <th data-type="text">Seguro<span class="arrow"></span></th>
+                            <th data-type="date">Fecha de Seguro<span class="arrow"></span></th>
+                            <th data-type="text">Baja<span class="arrow"></span></th>
+                            <th data-type="date">Fecha de Baja<span class="arrow"></span></th>
+                            <th data-type="text">Responsable<span class="arrow"></span></th>
+                            <th data-type="text">Observaciones<span class="arrow"></span></th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se rellenarán las filas con datos de productos -->
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+
+
+    <script src="./js/Dashboard.js"></script>
+</body>
+
+</html>

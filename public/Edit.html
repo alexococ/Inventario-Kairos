@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/Add.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Editar Producto</title>
+</head>
+<body>
+    
+    <form id="edit-product-form" class="container">
+        <h1>Editar Producto</h1>
+        <br>
+        <label for="tipologia">Tipología:</label>
+        <input type="text" id="tipologia" name="Tipologia"><br><br>
+        
+        <label for="subtipologia">Subtipología:</label>
+        <input type="text" id="subtipologia" name="Subtipologia"><br><br>
+        
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="Nombre"><br><br>
+        
+        <label for="descripcion">Descripción:</label>
+        <input type="text" id="descripcion" name="Descripcion"><br><br>
+        
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="Ubicacion"><br><br>
+
+        <label for="precio">Precio:</label>
+        <input type="text" id="precio" name="Precio"><br><br>
+        
+        <label for="fecha_compra">Fecha de Compra:</label>
+        <input type="date" id="fecha_compra" name="FechaCompra"><br><br>
+        
+        <label for="seguro">Seguro:</label>
+        <select id="seguro" name="Seguro">
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+        </select><br><br>
+        
+        <label for="fecha_seguro">Fecha de Seguro:</label>
+        <input type="date" id="fecha_seguro" name="FechaSeguro"><br><br>
+        
+        <label for="baja">Baja:</label>
+        <select id="baja" name="Baja">
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+        </select><br><br>
+        
+        <label for="fecha_baja">Fecha de Baja:</label>
+        <input type="date" id="fecha_baja" name="FechaBaja"><br><br>
+        
+        <label for="responsable">Responsable:</label>
+        <input type="text" id="responsable" name="Responsable"><br><br>
+        
+        <label for="observaciones">Observaciones:</label>
+        <textarea id="observaciones" name="Observaciones" rows="4"></textarea><br><br>
+        
+       <button type="submit">Guardar Cambios</button> 
+       <a href="/Dashboard.html" id="redirectButton" class="btn">Volver Atrás</a>
+    </form>
+
+    <script>
+         // Obtener el ID del producto de la URL
+         const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        // Si hay un ID de producto en la URL, cargar los datos del producto
+       // Si hay un ID de producto en la URL, cargar los datos del producto
+if (productId) {
+    fetch(`/obtener-producto/${productId}`)
+        .then(response => response.json())
+        .then(data => {
+            // Llenar los campos del formulario con los datos del producto
+            document.getElementById('tipologia').value = data.Tipologia;
+            document.getElementById('subtipologia').value = data.Subtipologia;
+            document.getElementById('nombre').value = data.Nombre;
+            document.getElementById('descripcion').value = data.Descripcion;
+            document.getElementById('ubicacion').value = data.Ubicacion;
+            document.getElementById('precio').value = data.Precio;
+
+            // Convertir las fechas de texto a objetos Date y formatearlas
+            document.getElementById('fecha_compra').value = formatDate(data.FechaCompra);
+            document.getElementById('fecha_seguro').value = formatDate(data.FechaSeguro);
+            document.getElementById('fecha_baja').value = formatDate(data.FechaBaja);
+
+            document.getElementById('seguro').value = data.Seguro;
+            document.getElementById('baja').value = data.Baja;
+            document.getElementById('responsable').value = data.Responsable;
+            document.getElementById('observaciones').value = data.Observaciones;
+        })
+        .catch(error => console.error('Error al cargar los datos del producto:', error));
+}
+
+// Función para formatear la fecha en formato "yyyy-MM-dd"
+function formatDate(dateString) {
+    if (!dateString) return ''; // Manejar el caso si la fecha es nula o indefinida
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    let month = (1 + date.getMonth()).toString().padStart(2, '0');
+    let day = date.getDate().toString().padStart(2, '0');
+
+    return year + '/' + month + '/' + day;
+}
+    </script>
+    <script src="./js/edit.js"></script>
+</body>
+</html>
